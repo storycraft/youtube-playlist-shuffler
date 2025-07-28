@@ -2,8 +2,9 @@
 Shuffle every videos in playlist automatically via Github Actions.
 The default settings shuffle the playlist daily 00:00.
 
-> **Warning**
+> [!WARNING]
 > This service uses Youtube's private API, Innertube and may stop working anytime.
+> 
 > Use at your own risk.
 
 ## Prerequisites
@@ -12,7 +13,7 @@ The default settings shuffle the playlist daily 00:00.
 3. Create an actions secret named `SOURCE_PLAYLIST_ID` and put source playlist id in it.
 4. Create an actions secret named `TARGET_PLAYLIST_ID` and put playlist id, where all shuffled videos will be placed.
 
-> **Warning**
+> [!WARNING]
 > Every videos added in `TARGET_PLAYLIST_ID` will be deleted.
 > Same items will be removed and only one will remain.
 >
