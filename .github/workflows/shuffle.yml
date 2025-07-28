@@ -34,7 +34,8 @@ jobs:
         run: pnpm start
         env:
           YT_SESSION: ${{ secrets.YT_SESSION }}
-          PLAYLIST_ID: ${{ secrets.PLAYLIST_ID }}
+          SOURCE_PLAYLIST_ID: ${{ secrets.SOURCE_PLAYLIST_ID }}
+          TARGET_PLAYLIST_ID: ${{ secrets.TARGET_PLAYLIST_ID }}
 
       - name: Cache session
         id: cache-primes
