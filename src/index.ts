@@ -17,9 +17,9 @@ const innerTube = await Innertube.create({
 });
 
 const list = await allPlaylistVideos(env.SOURCE_PLAYLIST_ID);
-for (const video of list) {
-  console.debug(`${video.index.text || ''}: ${video.author.name} - ${video.title.text || ''}`);
-}
+// for (const video of list) {
+//   console.debug(`${video.index.text || ''}: ${video.author.name} - ${video.title.text || ''}`);
+// }
 console.info(`Fetched ${String(list.length)} items in playlist`);
 
 const shuffled = list.slice(0);
