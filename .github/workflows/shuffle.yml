@@ -1,0 +1,44 @@
+name: Shuffle playlist
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  shuffle:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+  
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Restore cached session
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: yt-session-cache
+
+      - name: Shuffle
+        run: pnpm start
+        env:
+          YT_SESSION: ${{ secrets.YT_SESSION }}
+          PLAYLIST_ID: ${{ secrets.PLAYLIST_ID }}
+
+      - name: Cache session
+        id: cache-primes
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}

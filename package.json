@@ -1,0 +1,29 @@
+{
+  "name": "youtube-playlist-shuffler",
+  "version": "1.0.0",
+  "description": "Youtube playlist random shuffler",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "storycraft <storycraft@pancake.sh>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@stylistic/eslint-plugin": "^5.2.2",
+    "@types/node": "^24.1.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "envalid": "^8.1.0",
+    "tsx": "^4.20.3",
+    "youtubei.js": "^15.0.1"
+  }
+}
